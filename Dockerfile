@@ -12,11 +12,14 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/*
 
 COPY package.json .
-RUN npm install -g npm@7.20.5
-RUN npm install
+RUN npm i ffmpeg
+RUN npm i graceful-fs
+RUN npm i emoji-api
+RUN npm i jsdom
+RUN npm i npm i @adiwajshing/baileys@latest
 
 COPY . .
 
 EXPOSE 5000
 
-CMD ["node", "index"]`
+CMD ["npm", "start"]`
